@@ -44,3 +44,6 @@
     \rho_{C_{10}+}=\dfrac{\rho_{st}-\sum^{N-1}_{i=1}{\omega_i\times \rho_i}}{\omega_{C_{10}+}}
     \tag{2}
     $$
+
+
+    $\degree$
