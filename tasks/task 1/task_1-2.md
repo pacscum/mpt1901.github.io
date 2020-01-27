@@ -27,13 +27,10 @@
 
 **Необходимо определить плотность остатка $C_{10}+$**
 
-Источники информации:
-
-* [Definition and molecular weight (molar mass) of some common substances ](https://www.engineeringtoolbox.com/molecular-weight-gas-vapor-d_1156.html)
-* [Molweight, melting and boiling point, density, flash point and autoignition temperature, as well as number of carbon and hydrogen atoms in each molecule are given for 200 different hydrocarbons ](https://www.engineeringtoolbox.com/hydrocarbon-boiling-melting-flash-autoignition-point-density-gravity-molweight-d_1966.html)
-* [Gas Density, Molecular Weight and Density](http://www.teknopoli.com/PDF/Gas_Density_Table.pdf)
-
 ## Алгоритм расчета
+
+![Таблица плотностей, рекомендованная American Petroleum Institute для использования в вычислениях плотностей углеводородных смесей в стандартных условиях. Может использоваться **только** для разгазированной нефти в стандартных условиях](images/1.2.png)
+
 
 1. Определение массовой доли $\omega_{i}$:
     $$
