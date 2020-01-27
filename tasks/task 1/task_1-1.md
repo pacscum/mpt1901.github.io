@@ -31,8 +31,6 @@
 2. массовые доли компонентов
 > Использовать таблицы Katz & Firoozabadi
 
-> Плотность дегазированной нефти $\rho_{st} = 0.836 \ г/см^3$
-
 Источники информации:
 
 * [Definition and molecular weight (molar mass) of some common substances ](https://www.engineeringtoolbox.com/molecular-weight-gas-vapor-d_1156.html)
@@ -40,7 +38,6 @@
 * [Gas Density, Molecular Weight and Density](http://www.teknopoli.com/PDF/Gas_Density_Table.pdf)
 
 
----
 
 ## Алгоритм расчета
 
@@ -64,11 +61,11 @@
     $$
     Отсюда, можно найти молярную массу $C_{10}+$:
     $$
-    M_{c(10+)}=\dfrac{M_c-\sum^{N-1}_{i=1}{a_i\times M_i}}{a_{C_{10}+}}
+    M_{C_{10}+}=\dfrac{M_c-\sum^{N-1}_{i=1}{a_i\times M_i}}{a_{C_{10}+}}
     \tag{3}
     $$
 3. Определение массовой доли $\omega_{C_{10}+}$:
     $$
-    \omega_{C_{10}+} = \dfrac{z_{C_{10}+}\times M_{C_{10}+}}{M_c}
+    \omega_{C_{10}+} = \dfrac{a_{C_{10}+}\times M_{C_{10}+}}{M_c}
     \tag{4}
     $$
