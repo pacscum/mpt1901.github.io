@@ -6,8 +6,8 @@
 
 Состав разгазированной нефти:
 
-|     Компонент      | Мольная концентрация, % |Массовая доля, г/моль|
-| :----------------: | :----------------------: |---|
+|     Компонент      | Мольная концентрация, % |Плотность при стандартных условиях, кг/куб.м|Массовая доля, г/моль|
+| :----------------: | :----------------------: |---|---|
 |       $N_2$        |          0.001           |
 |       $CO_2$       |          0.058           |
 |       $C_1$        |          0.348           |
@@ -22,28 +22,35 @@
 |       $C_8$        |          12.013          |
 |       $C_9$        |          7.745           |
 |     $C_{10}+$      |          58.023          |
-| **Молярная масса** |        **187.01**        |
 
-Плотность разгазированной нефти $\rho_{st}=0.836 \ г/см^3$
+ **Молярная масса смеси = 187.01 г/моль**
+
+**Плотность разгазированной нефти $\rho_{st}=0.836 \ г/см^3$**
 
 &nbsp;
 
 **Необходимо определить плотность остатка $C_{10}+$**
 
 ## Алгоритм расчета
+1. Определить плотность каждого компонента при стандартных условиях.
 
-Таблица плотностей, рекомендованная American Petroleum Institute для использования в вычислениях плотностей углеводородных смесей в стандартных условиях. Может использоваться **только** для разгазированной нефти в стандартных условиях:
+> Источники информации:
+> 
+> * [Definition and molecular weight (molar mass) of some common substances
+> ](https://www.engineeringtoolbox.com/molecular-weight-gas-vapor-d_1156.html)
+> * [Molweight, melting and boiling point, density, flash point and autoignition temperature, as well as number of carbon and hydrogen
+> atoms in each molecule are given for 200 different hydrocarbons
+> ](https://www.engineeringtoolbox.com/hydrocarbon-boiling-melting-flash-autoignition-point-density-gravity-molweight-d_1966.html)
+> * [Gas Density, Molecular Weight and Density](http://www.teknopoli.com/PDF/Gas_Density_Table.pdf)
 
-![Таблица плотностей, рекомендованная American Petroleum Institute для использования в вычислениях плотностей углеводородных смесей в стандартных условиях. Может использоваться **только** для разгазированной нефти в стандартных условиях](https://raw.githubusercontent.com/mpt1901/mpt1901.github.io/master/tasks/task%201/images/1.2.png)
-
-1. Определение массовой доли $\omega_{i}$ для каждого i-го компонента:
+3. Определение массовой доли $\omega_{i}$ для каждого i-го компонента:
     $$
     \omega_{i} = \dfrac{a_{i}\times M_{i}}{M_c}
     \tag{1}
     $$
    > где $a_i$ - мольная концентрация.
-2. Определение плотности остатка $\rho_{C_{10}+}$:
-    $$
-    \rho_{C_{10}+}=\dfrac{\rho_{st}-\sum^{N-1}_{i=1}{\omega_i\times \rho_i}}{\omega_{C_{10}+}}
+4. Определение плотности остатка $\rho_{C_{10}+}$ выполняется аналогично пункту 2 упражнения № 1.1 по формуле:
+$$
+  \rho_c=\sum_{i=1}^{N}{\omega_i\times \rho_i}
     \tag{2}
-    $$
+$$
