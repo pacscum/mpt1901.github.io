@@ -23,6 +23,7 @@
 > Данные материалы носят рекомендательный характер, желательно
 > использовать не только их.  
 
+* [Pipesim HELP](files/PIPESIM%20Tech%20Description.pdf)
 * [Многофазный поток в скважинах](files/Многофазный%20поток%20в%20скважинах.pdf)
 * [Фазовые равновесия в системах природных углеводородов / Баталин, Брусиловский, Захаров](files/batalin_o_yu_brusilovskiy_a_i_fazovye_ravnovesiya_v_sistemak.pdf)
 * [Фазовые превращения при разработке месторождений нефти и газа / Брусиловский](files/brusilovskiy_a_i_fazovye_prevrashcheniya_pri_razrabotke_mest.pdf)
