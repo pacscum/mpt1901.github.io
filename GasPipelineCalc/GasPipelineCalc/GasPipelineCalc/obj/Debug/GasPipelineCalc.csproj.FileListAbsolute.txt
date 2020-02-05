@@ -1,0 +1,9 @@
+D:\_Yuri\Projects\USPTU\mpt1901.github.io\GasPipelineCalc\GasPipelineCalc\GasPipelineCalc\bin\Debug\GasPipelineCalc.exe.config
+D:\_Yuri\Projects\USPTU\mpt1901.github.io\GasPipelineCalc\GasPipelineCalc\GasPipelineCalc\bin\Debug\GasPipelineCalc.exe
+D:\_Yuri\Projects\USPTU\mpt1901.github.io\GasPipelineCalc\GasPipelineCalc\GasPipelineCalc\bin\Debug\GasPipelineCalc.pdb
+D:\_Yuri\Projects\USPTU\mpt1901.github.io\GasPipelineCalc\GasPipelineCalc\GasPipelineCalc\bin\Debug\Newtonsoft.Json.dll
+D:\_Yuri\Projects\USPTU\mpt1901.github.io\GasPipelineCalc\GasPipelineCalc\GasPipelineCalc\bin\Debug\Newtonsoft.Json.xml
+D:\_Yuri\Projects\USPTU\mpt1901.github.io\GasPipelineCalc\GasPipelineCalc\GasPipelineCalc\obj\Debug\GasPipelineCalc.csprojAssemblyReference.cache
+D:\_Yuri\Projects\USPTU\mpt1901.github.io\GasPipelineCalc\GasPipelineCalc\GasPipelineCalc\obj\Debug\GasPipelineCalc.csproj.CopyComplete
+D:\_Yuri\Projects\USPTU\mpt1901.github.io\GasPipelineCalc\GasPipelineCalc\GasPipelineCalc\obj\Debug\GasPipelineCalc.exe
+D:\_Yuri\Projects\USPTU\mpt1901.github.io\GasPipelineCalc\GasPipelineCalc\GasPipelineCalc\obj\Debug\GasPipelineCalc.pdb
