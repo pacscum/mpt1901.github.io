@@ -33,6 +33,7 @@ namespace GasPipelineCalc
 
         public double Temperature;
         public double Pressure;
+        public double Volume;
 
         public double a;
         public double b;
@@ -253,6 +254,7 @@ namespace GasPipelineCalc
         public class Cp
         {
             Mixture Mixture;
+            Mixture.Z Z;
 
             List<double> Cp0_Fractions = new List<double> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
             public double Cp0 { get; set; }
@@ -264,10 +266,14 @@ namespace GasPipelineCalc
             public List<double> d2adt2_list = new List<double> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
 
+            public double DADT { get; set; }
+            public double D2ADT2 { get; set; }
+            public double DPDTV { get; set; }
+            public double DPDTT { get; set; }
 
 
 
-            public Cp(Mixture mix)
+            public Cp(Mixture mix, Mixture.Z Z)
             {
                 Mixture = mix;
                 Cp0 = SetCp0();
@@ -280,6 +286,7 @@ namespace GasPipelineCalc
                     d2adt2_list[i] = Mixture.ACritical[i] * d2Alphadt2_list[i];
                 }
 
+                this.Mixture.Volume = Z.Value * R * Mixture.Temperature / Mixture.Pressure;
 
             }
 
@@ -355,13 +362,65 @@ namespace GasPipelineCalc
                         var nuj = Mixture.MComponents.MoleFractions[j];
                         var ai = Mixture.A[i];
                         var aj = Mixture.A[j];
-                        rv += 0.5*(1-Coefficients.Interaction[])
+                        var dai = dadt_list[i];
+                        var daj = dadt_list[j];
+
+                        rv += 0.5 * (1 - c) * nui * nuj * (Math.Sqrt(aj / ai) * dai + Math.Sqrt(ai / aj) * daj);
                     }
                 }
 
                 return rv;
             }
 
+
+            public double CalcD2ADT2()
+            {
+                var rv = 0.0;
+
+                for (int i = 0; i < Mixture.MComponents.MoleFractions.Count; i++)
+                {
+                    for (int j = 0; j < Mixture.MComponents.MoleFractions.Count; j++)
+                    {
+                        var c = Coefficients.Interaction[i, j];
+                        var nui = Mixture.MComponents.MoleFractions[i];
+                        var nuj = Mixture.MComponents.MoleFractions[j];
+                        var ai = Mixture.A[i];
+                        var aj = Mixture.A[j];
+                        var dai = dadt_list[i];
+                        var daj = dadt_list[j];
+                        var d2ai = d2adt2_list[i];
+                        var d2aj = d2adt2_list[j];
+
+                        rv += (1 - c) * nui * nuj * (
+                            Math.Sqrt(aj / ai) * d2ai + Math.Sqrt(ai / aj) * d2aj +
+                            0.5 * Math.Sqrt(ai / aj) * dai * ((ai * daj - aj * dai) / Math.Pow(ai, 2)) +
+                            0.5 * Math.Sqrt(aj / ai) * daj * ((aj * dai - ai * daj) / Math.Pow(aj, 2)));
+                        rv *= 0.5;
+                    }
+                }
+
+                return rv;
+            }
+
+
+            public double CalcDeltaCv()
+            {
+                var rv = Mixture.Temperature * D2ADT2 * (1 / (2 * Math.Sqrt(2) * Mixture.b)) *
+                    Math.Log((Mixture.Volume + (Math.Sqrt(2) + 1) * Mixture.b) / (Mixture.Volume - (Math.Sqrt(2) - 1) * Mixture.b));
+                return rv;
+            }
+
+
+            public double CalcDPDTV()
+            {
+                var V = this.Mixture.Volume;
+                var b = Mixture.b;
+                var rv = Mixture.R / (V - b) - DADT / (V * (V + b) + Mixture.b * (V - b));
+                return rv;
+            }
+
+
+            public double Calc
         }
     }
 }
