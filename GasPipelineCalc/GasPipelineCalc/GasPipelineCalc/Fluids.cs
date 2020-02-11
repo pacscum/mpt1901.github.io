@@ -59,7 +59,7 @@ namespace GasPipelineCalc
 
         public void SetCoefficients(int param)
         {
-            for (int index = 0; index < MComponents.MoleFractions.Count; index++)
+            for (var index = 0; index < MComponents.MoleFractions.Count; index++)
             {
                 var t = CriticalParameters.Temperature[index];
                 var p = CriticalParameters.Pressure[index];
@@ -124,9 +124,9 @@ namespace GasPipelineCalc
 #endif
             var rv = 0.0;
 
-            for (int i = 0; i < MComponents.MoleFractions.Count; i++)
+            for (var i = 0; i < MComponents.MoleFractions.Count; i++)
             {
-                for (int j = 0; j < MComponents.MoleFractions.Count; j++)
+                for (var j = 0; j < MComponents.MoleFractions.Count; j++)
                 {
 #if DEBUG
                     Console.WriteLine($"i = {i}; j = {j} \n" +
@@ -158,7 +158,7 @@ namespace GasPipelineCalc
         {
             var rv = 0.0;
 
-            for (int i = 0; i < MComponents.MoleFractions.Count; i++)
+            for (var i = 0; i < MComponents.MoleFractions.Count; i++)
             {
                 rv += MComponents.MoleFractions[i] * B[i];
             }
@@ -234,9 +234,9 @@ namespace GasPipelineCalc
                 var a2 = 1 - B;
 
                 var _roots = Cubic.RealRoots(-a0, a1, -a2);
-                List<double> roots = new List<double> { _roots.Item1, _roots.Item2, _roots.Item3 };
+                var roots = new List<double> { _roots.Item1, _roots.Item2, _roots.Item3 };
 
-                for (int i = 0; i < 3; i++)
+                for (var i = 0; i < 3; i++)
                 {
                     if (roots[i] < 0)
                     {
@@ -280,7 +280,7 @@ namespace GasPipelineCalc
                 CalcDAlphaDT(1);
                 CalcDAlphaDT(2);
 
-                for (int i = 0; i < Mixture.MComponents.MoleFractions.Count; i++)
+                for (var i = 0; i < Mixture.MComponents.MoleFractions.Count; i++)
                 {
                     dadt_list[i] = Mixture.ACritical[i] * dAlphadt_list[i];
                     d2adt2_list[i] = Mixture.ACritical[i] * d2Alphadt2_list[i];
@@ -293,7 +293,7 @@ namespace GasPipelineCalc
 
             public double SetCp0()
             {
-                for (int index = 0; index < Mixture.MComponents.MoleFractions.Count; index++)
+                for (var index = 0; index < Mixture.MComponents.MoleFractions.Count; index++)
                 {
                     if (Mixture.MComponents.MoleFractions[index] == 0) { Cp0_Fractions[index] = 0; continue; }
                     Cp0_Fractions[index] = 4.1868 *
@@ -305,7 +305,7 @@ namespace GasPipelineCalc
 
                 var rv = 0.0;
 
-                for (int index = 0; index < Mixture.MComponents.MoleFractions.Count; index++)
+                for (var index = 0; index < Mixture.MComponents.MoleFractions.Count; index++)
                 {
                     rv += Mixture.MComponents.MoleFractions[index] * Cp0_Fractions[index];
                 }
@@ -328,7 +328,7 @@ namespace GasPipelineCalc
 
             public void CalcDAlphaDT(int degree)
             {
-                for (int i = 0; i < Mixture.MComponents.MoleFractions.Count; i++)
+                for (var i = 0; i < Mixture.MComponents.MoleFractions.Count; i++)
                 {
                     var m = Mixture.M[i];
                     var tc = CriticalParameters.Temperature[i];
@@ -353,9 +353,9 @@ namespace GasPipelineCalc
             {
                 var rv = 0.0;
 
-                for (int i = 0; i < Mixture.MComponents.MoleFractions.Count; i++)
+                for (var i = 0; i < Mixture.MComponents.MoleFractions.Count; i++)
                 {
-                    for (int j = 0; j < Mixture.MComponents.MoleFractions.Count; j++)
+                    for (var j = 0; j < Mixture.MComponents.MoleFractions.Count; j++)
                     {
                         var c = Coefficients.Interaction[i, j];
                         var nui = Mixture.MComponents.MoleFractions[i];
@@ -377,9 +377,9 @@ namespace GasPipelineCalc
             {
                 var rv = 0.0;
 
-                for (int i = 0; i < Mixture.MComponents.MoleFractions.Count; i++)
+                for (var i = 0; i < Mixture.MComponents.MoleFractions.Count; i++)
                 {
-                    for (int j = 0; j < Mixture.MComponents.MoleFractions.Count; j++)
+                    for (var j = 0; j < Mixture.MComponents.MoleFractions.Count; j++)
                     {
                         var c = Coefficients.Interaction[i, j];
                         var nui = Mixture.MComponents.MoleFractions[i];

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\_site\mpt1901.github.io\GasPipelineCalc\GasPipelineCalc" t="IncludeFlat">
+      <e p="GasPipelineCalc" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Coefficients.cs" t="Include" />
+        <e p="Fluids.cs" t="Include" />
+        <e p="GasPipelineCalc.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="GasPipelineCalc.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+    <e p="C:\Users\MYM\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\MYM\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_GasPipelineCalc.1772896920.00" t="ExcludeRecursive" />
+  </component>
+</project>
