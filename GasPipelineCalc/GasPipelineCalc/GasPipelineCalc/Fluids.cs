@@ -420,7 +420,7 @@ namespace GasPipelineCalc
             }
 
 
-            public double Calc
+            //public double Calc
         }
     }
 }
