@@ -7,3 +7,14 @@ D:\_Yuri\Projects\USPTU\mpt1901.github.io\GasPipelineCalc\GasPipelineCalc\GasPip
 D:\_Yuri\Projects\USPTU\mpt1901.github.io\GasPipelineCalc\GasPipelineCalc\GasPipelineCalc\obj\Debug\GasPipelineCalc.csproj.CopyComplete
 D:\_Yuri\Projects\USPTU\mpt1901.github.io\GasPipelineCalc\GasPipelineCalc\GasPipelineCalc\obj\Debug\GasPipelineCalc.exe
 D:\_Yuri\Projects\USPTU\mpt1901.github.io\GasPipelineCalc\GasPipelineCalc\GasPipelineCalc\obj\Debug\GasPipelineCalc.pdb
+C:\_site\mpt1901.github.io\GasPipelineCalc\GasPipelineCalc\GasPipelineCalc\bin\Debug\GasPipelineCalc.exe.config
+C:\_site\mpt1901.github.io\GasPipelineCalc\GasPipelineCalc\GasPipelineCalc\bin\Debug\GasPipelineCalc.exe
+C:\_site\mpt1901.github.io\GasPipelineCalc\GasPipelineCalc\GasPipelineCalc\bin\Debug\GasPipelineCalc.pdb
+C:\_site\mpt1901.github.io\GasPipelineCalc\GasPipelineCalc\GasPipelineCalc\bin\Debug\EPPlus.xml
+C:\_site\mpt1901.github.io\GasPipelineCalc\GasPipelineCalc\GasPipelineCalc\bin\Debug\MathNet.Numerics.xml
+C:\_site\mpt1901.github.io\GasPipelineCalc\GasPipelineCalc\GasPipelineCalc\bin\Debug\Newtonsoft.Json.xml
+C:\_site\mpt1901.github.io\GasPipelineCalc\GasPipelineCalc\GasPipelineCalc\obj\Debug\GasPipelineCalc.csprojAssemblyReference.cache
+C:\_site\mpt1901.github.io\GasPipelineCalc\GasPipelineCalc\GasPipelineCalc\obj\Debug\GasPipelineCalc.csproj.Fody.CopyLocal.cache
+C:\_site\mpt1901.github.io\GasPipelineCalc\GasPipelineCalc\GasPipelineCalc\obj\Debug\GasPipelineCalc.csproj.CopyComplete
+C:\_site\mpt1901.github.io\GasPipelineCalc\GasPipelineCalc\GasPipelineCalc\obj\Debug\GasPipelineCalc.exe
+C:\_site\mpt1901.github.io\GasPipelineCalc\GasPipelineCalc\GasPipelineCalc\obj\Debug\GasPipelineCalc.pdb

@@ -6,16 +6,13 @@ using System.Threading.Tasks;
 
 namespace GasPipelineCalc
 {
-
-
-
-    struct Coefficients
+    internal struct Coefficients
     {
-        public static string[] InteractionCoeffsNames = { "N2    ", "CO2   ", "H2S   ", "C1H4  ", "C2H6  ", "C3H8  ", "C4H10 ",
+        public static readonly string[] InteractionCoeffsNames = { "N2    ", "CO2   ", "H2S   ", "C1H4  ", "C2H6  ", "C3H8  ", "C4H10 ",
             "C5H12 ", "C6H14 ", "C7H16 ", "C8H18 ", "C9H20 ", "C10H22" };
 
         //                                        N2        CO2         H2S          C1           C2           C3           C4           C5           C6        C7          C8          C9          C10
-        public static double[,] Interaction =   {{0,        -0.0170,    0.152,       0.0310,      0.0578,      0.0725,      0.0864,      0.0996,      0.1172,   0.1339,     0.1485,     0.1651,     0.1798},    // 0
+        public static readonly double[,] Interaction =   {{0,        -0.0170,    0.152,       0.0310,      0.0578,      0.0725,      0.0864,      0.0996,      0.1172,   0.1339,     0.1485,     0.1651,     0.1798},    // 0
                                                  {-0.0170,  0,          0.0970,      0.0920,      0.1134,      0.1120,      0.1108,      0.1096,      0.1079,   0.1064,     0.1051,     0.1036,     0.1022},    // 1
                                                  {0.152,    0.0970,     0,           0.0810,      0.0766,      0.0706,      0.0648,      0.0594,      0.0521,   0.0453,     0.0392,     0.0324,     0.0263},    // 2
                                                  {0.0310,   0.0920,     0.0810,      0,           0.0155,      0.0204,      0.0247,      0.0286,      0.0320,   0.0351,     0.0378,     0.0402,     0.0423},    // 3
@@ -44,11 +41,11 @@ namespace GasPipelineCalc
     }
 
 
-    struct CriticalParameters
+    internal struct CriticalParameters
     {
-        public static double[] Temperature = { 126.3, 304.2, 0, 190.55, 305.43, 369.82, 425.2, 470.4, 0, 0, 0, 0, 0 };
+        public static readonly double[] Temperature = { 126.3, 304.2, 0, 190.55, 305.43, 369.82, 425.2, 470.4, 0, 0, 0, 0, 0 };
 
-        public static double[] Pressure = { 3.4, 7.381, 0, 4.7, 4.9, 4.3, 3.8, 3.4, 0, 0, 0, 0, 0 };
+        public static readonly double[] Pressure = { 3.4, 7.381, 0, 4.7, 4.9, 4.3, 3.8, 3.4, 0, 0, 0, 0, 0 };
     }
 
 
