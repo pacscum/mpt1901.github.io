@@ -305,18 +305,23 @@ namespace GasPipelineCalc
                 d2Alphadt2_list.ForEach(Console.WriteLine);
 #endif
 
+                Console.WriteLine("----- da/dt -----");
                 for (var i = 0; i < Mixture.MComponents.MoleFractions.Count; i++)
                 {
                     dadt_list[i] = Mixture.ACritical[i] * dAlphadt_list[i];
                     d2adt2_list[i] = Mixture.ACritical[i] * d2Alphadt2_list[i];
+                    if (Mixture.MComponents.MoleFractions[i] == 0) continue;
+                    Console.WriteLine($"d_a for {Coefficients.InteractionCoeffsNames[i]} = {dadt_list[i]}");
+                    Console.WriteLine($"d_2_a for {Coefficients.InteractionCoeffsNames[i]} = {d2adt2_list[i]}");
                 }
 
                 DADT = CalcDADT();
+                
                 D2ADT2 = CalcD2ADT2();
-#if DEBUG
-                Console.WriteLine($"DA/DT = {DADT}");
-                Console.WriteLine($"D2A/DT2 = {D2ADT2}");
-#endif
+
+                Console.WriteLine("----- DA/DT -----");
+                Console.WriteLine($"DA/DT [ПР] = {DADT}");
+                Console.WriteLine($"D2A/DT2 [ПР] = {D2ADT2}");
 
                 DPDTV = CalcDPDTV();
                 DPDTT = CalcDPDTT();
@@ -330,6 +335,7 @@ namespace GasPipelineCalc
 
             public double CalcCp0()
             {
+                Console.WriteLine("-----");
                 for (var index = 0; index < Mixture.MComponents.MoleFractions.Count; index++)
                 {
                     if (Mixture.MComponents.MoleFractions[index] == 0)
@@ -346,6 +352,7 @@ namespace GasPipelineCalc
                                             Math.Pow(1.8 * Mixture.Temperature, 3) +
                                             5 * Coefficients.Fc[index] * 1e-14 *
                                             Math.Pow(1.8 * Mixture.Temperature, 4));
+                    Console.WriteLine($"Cp0 for {Coefficients.InteractionCoeffsNames[index]} = {Cp0_Fractions[index]}");
                 }
 
                 var rv = 0.0;
@@ -355,6 +362,7 @@ namespace GasPipelineCalc
                     rv += Mixture.MComponents.MoleFractions[index] * Cp0_Fractions[index];
                 }
 
+                Console.WriteLine("-----");
                 return rv;
             }
 
@@ -396,6 +404,7 @@ namespace GasPipelineCalc
                             }
 
                             dAlphadt_list[i] = -m * (1 / Math.Sqrt(t * tc)) * (1 + m * (1 - Math.Sqrt(t / tc)));
+                            Console.WriteLine($"d_alpha for {Coefficients.InteractionCoeffsNames[i]} = {dAlphadt_list[i] }");
                             break;
                         case 2:
                             if (Cp0_Fractions[i] == 0)
@@ -405,6 +414,7 @@ namespace GasPipelineCalc
                             }
 
                             d2Alphadt2_list[i] = 0.5 * m * (1 + m) * (1 / Math.Sqrt(tc)) * Math.Pow(t, -1.5);
+                            Console.WriteLine($"d_2_alpha for {Coefficients.InteractionCoeffsNames[i]} = {d2Alphadt2_list[i]}");
                             break;
                         default:
                             break;
@@ -433,6 +443,9 @@ namespace GasPipelineCalc
                         var aj = Mixture.A[j];
                         var dai = dadt_list[i];
                         var daj = dadt_list[j];
+                        
+                        
+                        
 #if DEBUG
                         Console.WriteLine($"DA/DT for i = {i} and j = {j}");
                         Console.WriteLine();
@@ -498,12 +511,13 @@ namespace GasPipelineCalc
                 return rv;
             }
 
+            
 
             public double CalcDPDTV()
             {
-                var V = this.Mixture.Volume;
-                var b = this.Mixture.b;
-                var rv = Mixture.R / (V - b) - DADT / (V * (V + b) + b * (V - b));
+                var V = Mixture.Volume;
+                var b = Mixture.b;
+                var rv = R / (V - b) - DADT / (V * (V + b) + b * (V - b));
                 return rv;
             }
 
@@ -525,6 +539,14 @@ namespace GasPipelineCalc
                 var dPdTv = CalcDPDTV();
                 var dPdTt = CalcDPDTT();
 
+#if RELEASE
+#endif
+                Console.WriteLine("-----");
+                Console.WriteLine($"dCv = {dCv}");
+                Console.WriteLine("-----");
+                Console.WriteLine($"(dP/dT)V = {dPdTv}");
+                Console.WriteLine($"(dP/dV)T = {dPdTt}");
+                Console.WriteLine("-----");
                 var dCp = dCv - (Mixture.Temperature * Math.Pow(dPdTv, 2) / dPdTt) - R;
                 return dCp;
             }
@@ -557,12 +579,14 @@ namespace GasPipelineCalc
                             (Z.Value * R / Mix.Pressure) + Cp.DPDTV / Cp.DPDTT);
 
                 var dvdt = (Cp.DPDTV / Cp.DPDTV);
-                var v = Z.Value * 8.31 * Mix.Temperature / (Mix.Pressure*1e6);
+                var v = Z.Value * 8.31 * Mix.Temperature / (Mix.Pressure * 1e6);
+#if DEBUG
                 Console.WriteLine($"v = {v}");
+#endif
                 Value2 = (Mix.Temperature * dvdt - v) / Cp.Value;
                 var dvdt_p = 1 / ((Mix.Temperature / (v - Mix.b)) - 2 * Mix.a * (v - Mix.b) /
                                   (R * Math.Pow(v, 3)));
-                Value3 = (1 / Cp.Value/1000) * (v - Mix.Temperature * dvdt_p);
+                Value3 = (1 / Cp.Value / 1000) * (v - Mix.Temperature * dvdt_p);
 #if DEBUG
                 Console.WriteLine($"Mix.Temperature = {Mix.Temperature}");
                 Console.WriteLine($"Cp.Value = {Cp.Value}");
@@ -575,6 +599,7 @@ namespace GasPipelineCalc
 
 #endif
             }
+            
         }
     }
 }
