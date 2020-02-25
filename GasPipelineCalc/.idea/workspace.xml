@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5981eef7-5a42-44b9-8cdc-ebff53ed24f6" name="Default Changelist" comment="" />
+    <list default="true" id="5981eef7-5a42-44b9-8cdc-ebff53ed24f6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GasPipelineCalc/.vs/GasPipelineCalc/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/GasPipelineCalc/.vs/GasPipelineCalc/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GasPipelineCalc/.vs/GasPipelineCalc/v16/Server/sqlite3/storage.ide" beforeDir="false" afterPath="$PROJECT_DIR$/GasPipelineCalc/.vs/GasPipelineCalc/v16/Server/sqlite3/storage.ide" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GasPipelineCalc/GasPipelineCalc/obj/Release/GasPipelineCalc.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/GasPipelineCalc/GasPipelineCalc/obj/Release/GasPipelineCalc.csprojAssemblyReference.cache" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +28,8 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/pipe1_v1.1.6/pipe1_v1.1.6.py" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -55,7 +61,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
